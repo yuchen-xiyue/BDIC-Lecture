@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+ 
 //char week[7][10] = {"Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"};
 //int days[4] = {31, 30, 28, 29};
 int LeapYear(int year);
