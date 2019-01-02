@@ -5,7 +5,6 @@ public interface Stack {
 	
 	boolean isEmpty();
 	
-	
 	Object top();
 	
 	void push(Object obj);
