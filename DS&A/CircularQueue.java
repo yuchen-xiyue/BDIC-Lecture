@@ -1,20 +1,30 @@
 interface QueueInterface {
-	void enqueue(int data);
-	int dequeue();
-	int front();
+	
 	int size();
+	
 	boolean isEmpty();
+	
+	void enqueue(int data);
+	
+	int dequeue();
+	
+	int front();
+
 }
+
+
 public class CircularQueue implements QueueInterface{
 	private int MaxSize;
 	private int[] values;
 	private int front;
 	private int rear;
+	private int size;
 	CircularQueue(int MaxSize) {
 		this.MaxSize = MaxSize;
 		values = new int[MaxSize];
 		front = 0;
 		rear = 0;
+		size = 0;
 	}
 
 	public void enqueue(int data) {
@@ -23,12 +33,14 @@ public class CircularQueue implements QueueInterface{
 		else {
 			values[rear] = data;
 			rear = (rear + 1)%MaxSize;
+			size = size + 1;
 		}
 	}
 
 	public int dequeue() {
 		int temp = values[front];
 		front = (front + 1)%MaxSize;
+		size = size - 1;
 		return temp;
 	}
 
@@ -37,10 +49,7 @@ public class CircularQueue implements QueueInterface{
 	}
 
 	public int size() {
-		if(rear >= front)
-			return rear - front;
-		else
-			return rear + MaxSize - front;
+		return size;
 	}
 
 	public boolean isEmpty() {
