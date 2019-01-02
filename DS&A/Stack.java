@@ -1,6 +1,7 @@
 package dataType;
 
 public interface Stack {
+	
 	int size();
 	
 	boolean isEmpty();
